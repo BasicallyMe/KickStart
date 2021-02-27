@@ -30,16 +30,16 @@ class House {
 }
 class Calc {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         House h1 = new House();
-        System.out.print("Enter the number of houses available");
-        int size = input.nextInt();
-        System.out.print("\nEnter the budget available");
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nEnter the number of houses available ");
+        int size =input.nextInt();
+        System.out.print("\nEnter the budget available ");
         int budget = input.nextInt();
         int[] array = new int[size];
-        System.out.print("\nEnter the elements of the array");
-        for(int i=0; i<size; i++) {
-            array = input.nextInt();
+        System.out.print("\nEnter the price of the houses");
+        for (int i = 0; i < size; i++) {
+            array[i] = input.nextInt();
         }
         h1.sortArray(array, size);
         int number = h1.setCount(array, size, budget);
