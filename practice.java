@@ -1,5 +1,5 @@
 package com.java.Practice;
-
+import java.util.Scanner;
 class House {
     int count=0;
     void sortArray(int[] array, int size) {
@@ -30,12 +30,26 @@ class House {
 }
 class Calc {
     public static void main(String[] args) {
-        House h1 = new House();
-        int size = 4;
-        int budget = 100;
-        int[] array = {20,90,40,90};
-        h1.sortArray(array, size);
-        int number = h1.setCount(array, size, budget);
-        System.out.print("\nThe number of houses that can be bought within the budget is "+number);
+
+            Scanner input = new Scanner(System.in);
+            int cases, n=0;
+            System.out.print("\nEnter the number of test cases available");
+            cases = input.nextInt();
+            do {
+            House h1 = new House();
+            System.out.print("\nEnter the number of houses available ");
+            int size = input.nextInt();
+            System.out.print("\nEnter the budget available ");
+            int budget = input.nextInt();
+            int[] array = new int[size];
+            System.out.print("\nEnter the price of the houses");
+            for (int i = 0; i < size; i++) {
+                array[i] = input.nextInt();
+            }
+            h1.sortArray(array, size);
+            int number = h1.setCount(array, size, budget);
+            System.out.print("\nCase#"+(n+1)+": "+number);
+            n++;
+        } while(n<cases);
     }
 }
